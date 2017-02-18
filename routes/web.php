@@ -21,14 +21,26 @@ Route::get('/romanconverter',function(\Illuminate\Http\Request $request){
 });
 
 Route::get('/partition',function(\Illuminate\Http\Request $request){
-    function partition($sum, $largest_number){
-        if($largest_number == 0) return 0;
-        if($sum == 0) return 1;
-        if($sum < 0) return 0;
-        return partition($sum,$largest_number-1)+partition($sum-$largest_number,$largest_number);
+    function recursion($left, $last = 1 , $ar = []) {
+        if($left == 0) {
+            foreach ($ar as $key  => $n) {
+                if($key == count($ar)-1){
+                    printf("%d", $n);
+                }
+                else{
+                    printf("%d + ", $n);
+                }
+            }
+            print "<br>";
+            return;
+        }
+        for($n = $last; $n <= $left; $n++) {
+            $b = $ar;
+            array_push($b, $n);
+            recursion($left - $n, $n, $b);
+        }
     }
-
-    dd(partition(5,10));
+    recursion($request->number);
 });
 
 Route::get('/byte_swap',function(\Illuminate\Http\Request $request){
@@ -37,5 +49,9 @@ Route::get('/byte_swap',function(\Illuminate\Http\Request $request){
     $collect->each(function($c) use ($chunk){
         $chunk->push($c);
     });
-    dd(implode($chunk->toArray()));
+    return implode($chunk->toArray());
+});
+
+Route::get('unique',function(\Illuminate\Http\Request $request){
+    return implode(collect(str_split($request->word))->unique()->toArray());
 });

@@ -18,6 +18,7 @@
             .case{
                 background-color: #fafafa;
                 padding: 30px;
+                margin: 20px 0;
             }
             .case__title{
                 margin: 0;
@@ -55,4 +56,53 @@
             </div>
         </div>
     </div>
+    <div class="container" id="roman">
+        <div class="case">
+            <h2 class="case__title">Case 3.3 - Integer Partitioning</h2>
+            <div class="row case__form">
+                <form action="partition">
+                    <div class="ten columns">
+                        <label for="number">Your number</label>
+                        <input class="u-full-width" type="number" name="number" id="number">
+                    </div>
+                    <div class="two columns case__submit">
+                        <button class="button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="roman">
+        <div class="case">
+            <h2 class="case__title">Case 3.4 - Byte Swapper</h2>
+            <div class="row case__form">
+                <form action="byte_swap">
+                    <div class="ten columns">
+                        <label for="number">Your byte</label>
+                        <input class="u-full-width" type="text" name="number" id="number">
+                    </div>
+                    <div class="two columns case__submit">
+                        <button class="button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="roman">
+        <div class="case">
+            <h2 class="case__title">Case 3.5 - Repetition Hater</h2>
+            <div class="row case__form">
+                <form action="unique">
+                    <div class="ten columns">
+                        <label for="number">Your word</label>
+                        <input class="u-full-width" type="text" name="word" id="number">
+                    </div>
+                    <div class="two columns case__submit">
+                        <button class="button-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
